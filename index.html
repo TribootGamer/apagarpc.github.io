@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Gestor</title>
+<style>
+    /* Estilos para el título principal */
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+      margin-top: 50px;
+      color: #87ff83c4;
+    }
+/* Estilos para el subtitulo */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 10px;
+  color: #2daf73;
+}
+
+/* Agregamos la animación para el título principal */
+h1 {
+  animation-name: moveTitle;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* Agregamos la animación para el subtitulo */
+h2 {
+  animation-name: moveSubtitle;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* Definimos las animaciones */
+@keyframes moveTitle {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveSubtitle {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1, h2 {
+  animation: movimiento 1s ease-in-out 1s forwards;
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Estilos para los botones */
+button {
+display: block;
+margin: 20px auto;
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+font-size: 18px;
+font-weight: bold;
+color: #fff;
+background-color: #4CAF50;
+cursor: pointer;
+}
+
+/* Estilos para cuando se pase el cursor sobre el botón */
+button:hover {
+background-color: #3E8E41;
+}
+
+/* Estilos para la imagen */
+.image {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+height: auto;
+}
+
+/*Estilos para el fondo con blur*/
+
+
+
+body {
+    background-image: url('http://imgfz.com/i/6Em2iGQ.jpeg');
+    background-size: cover;
+    will-change: backdrop-filter; /* Agregamos esta propiedad para optimizar el rendimiento */
+    backdrop-filter: blur(15px); /* Agregamos el blur */
+    transition: backdrop-filter 0.5s ease-out; /* Agregamos una transición para el efecto de blur */
+    opacity: 0; /* Agregamos un efecto de desvanecimiento */
+    height: 100vh; /* ajusta la altura del contenedor al 100% del viewport height */
+    width: 100vw; /* ajusta la anchura del contenedor al 100% del viewport width */
+}
+
+
+h1, h2 {
+  opacity: 0;
+}
+
+
+</style>
+
+</head>
+<body>
+  <h1>GESTOR DE APAGADO</h1>
+  <h2>by OMAR</h2>
+  <!-- Agregando la imagen -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/One_piece.png" alt="One Piece" class="image">
+<button onclick="location.href='http://172.16.25.1:84'" style="background-color: #87ff83c4;">Apagar el PC a Carlos</button>
+<button onclick="location.href='http://172.16.6.1:84'" style="background-color: #87ff83c4;">Apagar el PC a Juanma</button>
+
+<button onclick="location.href='http://172.16.10.1:84'" style="background-color: #87ff83c4;">Apagar el PC a Dani</button>
+
+<button onclick="location.href='http://localhost:84'" style="background-color: #87ff83c4;">Apagar mi PC</button>
+
+<button onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" style="position: fixed; top: -50px; right: 50px; background-color: #48a7ff;">Blue Team</button>
+
+<button onclick="location.href='https://i.ibb.co/HFt1zpB/Captura-de-pantalla-2023-03-21-170501.png'" style="position: fixed; top: -50px; right: 195px; background-color: #ff3737;">Red Team</button>
+
+<script>
+    const buttons = document.querySelectorAll('button');
+  
+    buttons.forEach(button => {
+      button.addEventListener('mouseover', () => {
+        button.style.transform = 'translateY(-5px)';
+      });
+  
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0px)';
+      });
+    });
+  
+    const body = document.querySelector('body');
+    body.style.opacity = '0';
+  
+    window.addEventListener('load', () => {
+      body.style.transition = 'opacity 0.5s ease-in';
+      body.style.opacity = '1';
+    });
+
+    
+  </script>
+
+</body>
+</html>
